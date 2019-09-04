@@ -41,5 +41,4 @@ frontend link http://dmcindia.biz or http://www.dmcindia.biz
 
 
 note 
-*in signup page list for selecting country code and id will work when cors addon is used in browser
 *in google chrome socket.io is giving some errors otherwise in opera, edge everything is working
