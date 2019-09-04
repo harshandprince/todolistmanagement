@@ -1,5 +1,6 @@
 let express=require('express');
 let mongoose=require('mongoose');
+const request = require('request');
 let errorHandler=require('./library/errorHandler');
 let socket=require('./socket/socket');
 let http=require('http');
@@ -19,6 +20,28 @@ let config=require('./config/config');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:false}));
 route.setRouter(app);
+app.get('/names',(req,res)=>{
+  request(
+    { url: 'http://country.io/names.json' },
+    (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        return res.status(500).json({ type: 'error', message: err.message });
+      }
+      res.json(JSON.parse(body));
+    }
+  )
+});
+app.get('/phone',(req,res)=>{
+  request(
+    { url: 'http://country.io/phone.json' },
+    (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        return res.status(500).json({ type: 'error', message: err.message });
+      }
+      res.json(JSON.parse(body));
+    }
+  )
+});
 app.use(errorHandler.notFoundHandler);
 
 const server=http.createServer(app);

@@ -1,0 +1,45 @@
+user management
+*user can register
+*user can sent forget password request,code email will be sent on his registered email
+*user can reset his password using that code
+*user can login
+list management
+*user can create lists by clicking on create list ment
+*user can create subitems of these list and also subitems of these subitems can be created using add list item menu
+*user can change status of these items as todo or done
+*user can update any item
+*user can delete any item
+friend management
+*user can view registered users on find friends menu
+*user can send friend request to these users
+*user can cancel sent request to any user
+*user can accept the friend request on accept request menu
+*user can unfriend any friend in find friends menu
+*after making any user friend
+**user can view friends list and also can make changes in friends list the dropdown ment will be shown when any user make your friend on home page
+**all friends will get a notification about any change done in your list as well as in friends list
+**user can undo any change done by him using undo menu or by pressing ctrl+z in windows and cmd+z in mac
+**undo can be done in his or friends list any number of times
+**any route which is not present user will be redirected to not found page and he can login or go to home from there app will not crash
+**any major error will be handled by error page and user can go to login or home page from there
+for ui
+*loaders are used
+*pagination is used
+in backend 
+*jwt token is used to verify users identity
+*error handler and not found handler middlewares are created
+*response is identical
+*operations are logged for undo purpose
+*bcrypt hashing is used to hash password before saving
+
+links
+github link http://github.com/harshandprince/todolistmanagement
+apidoc link http://apidoc.dmcindia.biz
+events doc link http://eventdoc.dmcindia.biz
+api link http://api.dmcindia.biz
+frontend link http://dmcindia.biz or http://www.dmcindia.biz
+
+
+note 
+*in signup page list for selecting country code and id will work when cors addon is used in browser
+*in google chrome socket.io is giving some errors otherwise in opera, edge everything is working
